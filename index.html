@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+  <div id="weightAdder">
+    <h1>Daryl's Weight Calculator</h1>
+    <p>Need to get the weight of your stuff?</p><p> It's easy! To start enter a name for your first item and its weight in either metric or imperial, then hit enter!</p>
+    <hr>
+    
+    <div id="calculator">
+
+      <ul id="items">
+        <li>
+          <label for="itemName"><b> Item name: </b>
+            <input id="itemName" type="text">
+          </label>
+        </li>
+        <li>
+          <input class="metric" type="number"><b> kg</b>
+          <input class="metric" type="number"><b> g  </b>
+        </li>
+        <li>
+          OR
+        </li>
+        <li>
+          <input class="imperial" type="number"><b> lb</b>
+          <input class="imperial" type="number"><b> oz</b>
+        </li>
+      </ul>
+      <button id="addItem">
+        Add item
+      </button>
+    </div>
+  </div>
+
+  
+  
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Kgs</th>
+          <th>Lbs</th>
+        </tr>
+      </thead>
+      
+      <tbody id="theTable">
+        <!-- <tr>
+          <td>Backpack</td>
+          <td>1</td>
+          <td>2.2</td>
+        </tr>
+        <tr>
+          <td>sleeping bag</td>
+          <td>1.4</td>
+          <td>3.09</td>
+        </tr> -->
+        <script id="itemTemplate" type="text/x-handlebars-template">
+        {{#each items}}
+        <tr>
+          <td>{{ item }}</td>
+          <td class="kilos">{{ kg }}</td>
+          <td class="lbs">{{ lbs }}</td>
+        </tr>
+        {{/each}}
+      </script>
+      </tbody>
+
+      
+      
+    </table>
+  </div>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
